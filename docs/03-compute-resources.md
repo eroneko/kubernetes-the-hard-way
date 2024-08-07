@@ -25,6 +25,9 @@ XXX.XXX.XXX.XXX node-1.kubernetes.local node-1 10.200.1.0/24
 ```
 
 Now it's your turn to create a `machines.txt` file with the details for the three machines you will be using to create your Kubernetes cluster. Use the example machine database from above and add the details for your machines. 
+> [!NOTE]
+> You need to put `machines.txt` that you've created to the **root directory** of this repository if you want to strictly follow the script in this guide.
+> Some sed script may fail silently if you fail to do this.
 
 ## Configuring SSH Access
 
