@@ -74,6 +74,11 @@ nginx-56fcf95486-c8dnx   1/1     Running   0          8s
 
 In this section you will verify the ability to access applications remotely using [port forwarding](https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/).
 
+> [!NOTE]
+> The API server will make a port-forwarding request to the corresponding node in this step.
+>
+> You need to set up RBAC rules correctly to allow the API server to access the kubelet on worker nodes.
+
 Retrieve the full name of the `nginx` pod:
 
 ```bash
