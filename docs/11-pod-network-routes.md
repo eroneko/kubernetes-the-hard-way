@@ -4,7 +4,10 @@ Pods scheduled to a node receive an IP address from the node's Pod CIDR range. A
 
 In this lab you will create a route for each worker node that maps the node's Pod CIDR range to the node's internal IP address.
 
+> [!Note]
 > There are [other ways](https://kubernetes.io/docs/concepts/cluster-administration/networking/#how-to-achieve-this) to implement the Kubernetes networking model.
+> 
+> e.g. Using calico
 
 ## The Routing Table
 
@@ -21,6 +24,10 @@ Print the internal IP address and Pod CIDR range for each worker instance:
   NODE_1_SUBNET=$(grep node-1 machines.txt | cut -d " " -f 4)
 }
 ```
+> [!TIP]
+> The following step assumes that all nodes are within the same subnet and can find each other using ARP, which may not be true under certain circumstances.
+>
+> Consider using a CNI plugin if the command below fails.
 
 ```bash
 ssh root@server <<EOF
